@@ -9,7 +9,23 @@ def home():
 
 @app.route('/result')
 def scrappy():
-    return "scrappy"
+    pass
+
+@app.route('/loading')
+def loading():
+    pass
+
+# member db
+@app.route('/login')
+def login():
+    pass
+
+@app.route('/register')
+def register():
+    pass
+
+@app.route
+
 
 if __name__ == "__main__":
     app.run(debug=True)
