@@ -9,8 +9,9 @@ def home():
 
 @app.route('/result')
 def scrappy():
-    pass
-
+    return render_template('scrap-space.html')
+    
+########## after mvp ##############
 @app.route('/loading')
 def loading():
     pass
@@ -23,9 +24,6 @@ def login():
 @app.route('/register')
 def register():
     pass
-
-@app.route
-
 
 if __name__ == "__main__":
     app.run(debug=True)
