@@ -14,9 +14,7 @@
 
     <body>
         <div class="logo">
-            {% if True %}
             <img src="{{ url_for('static', filename='image/FiledLogo.png')}}">
-            {% if False %}
         </div>
         <form action="/result" method="GET">
             <input id="inputUrl" placeholder="주소를 입력하세요" required name=''>
