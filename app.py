@@ -18,9 +18,9 @@ def scrappy():
     page_url = input
     soup = BeautifulSoup(html_doc, 'html.parser')
 
+    pagesUrl = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
     data=[]
 
-    
     for no in notebook.tqdm(range(1, 76)):
         url = page_url + str(no)
         f = urllib.request.urlopen(url)
