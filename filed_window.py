@@ -11,13 +11,19 @@ scrap.geometry("600x450")
 display = tk.Entry(scrap, width=50)
 display.pack()
 
+
+# the button invoke to download excel file
+button = tk.Button(scrap, overrelief="solid", width=15, repeatdelay=1000, repeatinterval=100)
+button.pack()
+
 def scrappy():
     page_url = input
     soup = BeautifulSoup(html_doc, 'html.parser')
 
+
+    pagesUrl = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
     data=[]
 
-    
     for no in notebook.tqdm(range(1, 76)):
         url = page_url + str(no)
         f = urllib.request.urlopen(url)
