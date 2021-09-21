@@ -8,13 +8,6 @@ scrap = tk.Tk()
 scrap.title("법안자동수집정리머신")
 scrap.geometry("600x450")
 
-display = tk.Entry(scrap, width=50)
-display.pack()
-
-
-# the button invoke to download excel file
-button = tk.Button(scrap, overrelief="solid", width=15, repeatdelay=1000, repeatinterval=100)
-button.pack()
 
 def scrappy():
     page_url = input
@@ -49,7 +42,12 @@ def scrappy():
         final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']]
         final_result.to_excel("result.xlsx")
 
-display.bind('<Return>') 
+
+# the button invoke to download excel file
+button = tk.Button(scrap, command=scrappy, overrelief="solid",text="Start", width=15, repeatdelay=1000, repeatinterval=100)
+button.pack()
+
+button.bind('<Return>') 
 
 scrap.mainloop()
 
