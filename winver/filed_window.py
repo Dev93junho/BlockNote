@@ -9,7 +9,8 @@ import pandas as pd
 scrap = tk.Tk()
 
 scrap.title("법안자동수집정리머신")
-scrap.geometry("600x450")
+scrap.geometry("450x600")
+scrap.resizable(True, True)
 
 
 def scrappy():
