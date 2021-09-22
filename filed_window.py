@@ -1,7 +1,10 @@
 import tkinter as tk
 from bs4 import BeautifulSoup
+import urllib.request
+import numpy as np
+# from tqdm import trange, notebook
 import pandas as pd
-import requests
+# import requests
 
 scrap = tk.Tk()
 
@@ -11,13 +14,13 @@ scrap.geometry("600x450")
 
 def scrappy():
     page_url = input
-    soup = BeautifulSoup(html_doc, 'html.parser')
+    # soup = BeautifulSoup(html_doc, 'html.parser')
 
 
-    pagesUrl = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
+    page_url = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
     data=[]
 
-    for no in notebook.tqdm(range(1, 76)):
+    for no in range(1, 76):
         url = page_url + str(no)
         f = urllib.request.urlopen(url)
         source = f.read()
@@ -40,7 +43,7 @@ def scrappy():
         # change the order
         df.columns = ['의안명','발의의원', '상임위', '국회현황', '의결결과','의안번호']
         final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']]
-        final_result.to_excel("result.xlsx")
+        final.to_excel("result.xlsx")
 
 
 # the button invoke to download excel file
