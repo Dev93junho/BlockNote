@@ -1,17 +1,9 @@
-import tkinter as tk
 from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
 # from tqdm import trange, notebook
 import pandas as pd
 # import requests
-
-scrap = tk.Tk()
-
-scrap.title("법안자동수집정리머신")
-scrap.geometry("450x600")
-scrap.resizable(True, True)
-
 
 def scrappy():
     page_url = input
@@ -45,13 +37,5 @@ def scrappy():
         df.columns = ['의안명','발의의원', '상임위', '국회현황', '의결결과','의안번호']
         final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']]
         final.to_excel("result.xlsx")
-
-
-# the button invoke to download excel file
-button = tk.Button(scrap, command=scrappy, overrelief="solid",text="Start", width=15, repeatdelay=1000, repeatinterval=100)
-button.pack()
-
-button.bind('<Return>') 
-
-scrap.mainloop()
-
+        
+        break
