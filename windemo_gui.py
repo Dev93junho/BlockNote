@@ -1,36 +1,27 @@
-import tkinter as tk
+import sys
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import *
 from core import scrappy
 
-class Application(tk.Frame):
+
+class Application(QMainWindow):
     def __init__(self, master=None):
         super().__init__(master)
-        self.master = master
-        self.pack()
-        self.inner_widgets()
+        self.setGeometry(400,250,300,400)
+        self.setWindowTitle("data_scrapper_demo")
+        self.setWindowIcon(QIcon("icon.png"))
+        
 
-    def inner_widgets(self):
-        self.scrap = tk.Button(self)
-        self.scrap["text"] = "Scarp!"
-        self.scrap["command"] = self.scrap_func
-        # self.scrap["overreilf"] = "solid"
-        self.scrap.pack(side="top")
-
-    def scrap_func(self):
+        btn = QPushButton("Download", self)
+        btn.move(97, 350)
+        btn.clicked.connect(self.core)
+    
+    def core(self):
         scrappy
 
+        self.sleep(1)
 
-root = tk.Tk()
-
-# root.title("법안자동수집정리머신")
-# root.geometry("450x600")
-# root.resizable(True, True)
-
-
-app = Application(master=root)
-app.mainloop
-
-# # the button invoke to download excel file
-# button = tk.Button(scrap, command=scrappy, overrelief="solid",text="Start", width=15, repeatdelay=1000, repeatinterval=100)
-# button.pack()
-
-# button.bind('<Return>') 
+app = QApplication(sys.argv)
+window = Application()
+window.show()
+app.exec_()
