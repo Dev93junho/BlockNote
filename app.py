@@ -15,10 +15,7 @@ def home():
 
 @app.route('/result')
 def scrappy():
-    page_url = input
-    soup = BeautifulSoup(html_doc, 'html.parser')
-
-    pagesUrl = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
+    page_url = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
     data=[]
 
     for no in notebook.tqdm(range(1, 76)):
@@ -44,7 +41,7 @@ def scrappy():
         # change the order
         df.columns = ['의안명','발의의원', '상임위', '국회현황', '의결결과','의안번호']
         final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']]
-        final_result.to_excel("result.xlsx")
+        final.to_excel("result.xlsx")
 
 
     return render_template('scrap-space.html')
