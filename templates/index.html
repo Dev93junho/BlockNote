@@ -6,20 +6,24 @@
         <style>
             body{background: #010A2C; margin: 0}
             .logo{text-align: center; width: 25%; height: 10%; margin-top: 10%; margin-left: auto; margin-right: auto;}
-            form{width: 100%; margin-left: auto; margin-right: auto;}
-            #inputUrl{width: 90%; height: 30px; font-size: 14px; margin-top: 20%; border-radius: 10px;}
+            form{width: 100%;}
+            form>div{width: 70%; margin-left: auto; margin-right: auto;}
+            #inputUrl{width: 87%; height: 50px; font-size: 14px; margin-top: 5em; border-radius: 10px;}
             button{height: 30px; background: none; border-style: none; color: white;}
         </style>
     </head>
 
     <body>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='image/FiledLogo.png')}}">
+        <div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='image/FiledLogo.png')}}">
+            </div>
+            <form action="/result" method="GET">
+                <div>
+                    <input id="inputUrl" placeholder="주소를 입력하세요" required name=''>
+                    <button>scrap</button>
+                </div>
+            </form>
         </div>
-        <form action="/result" method="GET">
-            <input id="inputUrl" placeholder="주소를 입력하세요" required name=''>
-            <button>scrap</button>
-        </form>
-
     </body>
 </html>
