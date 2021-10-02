@@ -30,7 +30,7 @@ def register():
 ########## Loading page ##############
 @app.route('/loading')
 def loading():
-    pass
+    return render_template('loading.html')
 
 
 if __name__ == "__main__":
