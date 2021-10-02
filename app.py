@@ -17,20 +17,20 @@ def result():
     return scrappy
     
     
-# ########## after mvp ##############
-# @app.route('/loading')
-# def loading():
-#     pass
+########## Login Module ##############
+# member db
+@app.route('/login')
+def login(methods=['GET','POST']):
+    pass
 
-# # member db
-# @app.route('/login' methods=['GET','POST'])
-# def login():
-#     pass
+@app.route('/register')
+def register():
+    pass
 
-# @app.route('/register')
-# def register():
-#     pass
-# # ##################################
+########## Loading page ##############
+@app.route('/loading')
+def loading():
+    pass
 
 
 if __name__ == "__main__":
