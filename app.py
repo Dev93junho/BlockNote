@@ -1,33 +1,32 @@
 from flask import Flask, render_template, request
-from bs4 import BeautifulSoup
-import urllib.request
-import pandas as pd
-import numpy as np
+from werkzeug.utils import secure_filename
 import os
-from core import scrappy
+from scrappy import *
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('index.html')
 
-@app.route('/result')
+# result print page
+@app.route('/result', methods=['GET', 'POST'])
 def result():
     return render_template('scrap-space.html')
     
     
-########## Login Module ##############
+# Login module
 # member db
 @app.route('/login')
 def login(methods=['GET','POST']):
+    
     pass
 
 @app.route('/register')
 def register():
     pass
 
-########## Loading page ##############
+# loading page
 @app.route('/loading')
 def loading():
     return render_template('loading.html')
