@@ -4,11 +4,11 @@ import numpy as np
 from tqdm import trange, notebook
 import pandas as pd
 
-def scrappy():
+def table_scrappy():
     page_url = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
-    data=[]
+    table_scrappy_db=[]
 
-    for no in notebook.tqdm(range(1, 76)):
+    for no in range(1, 76):
         url = page_url + str(no)
         f = urllib.request.urlopen(url)
         source = f.read()
@@ -22,10 +22,10 @@ def scrappy():
 
         for i in range(1):
             add_list = table_df_list[0]
-            data.append(add_list)
+            table_scrappy_db.append(add_list)
 
         # Data framing
-        X= np.array(data).reshape(-1, 6)
+        X= np.array(table_scrappy_db).reshape(-1, 6)
         df = pd.DataFrame(X)
 
         # change the order
@@ -34,5 +34,24 @@ def scrappy():
         final.to_excel("result.xlsx")
 
 
-    return result.xlsx
+# need to change the source for drag area scrapping
+def str_scrappy():
+    page_url = input()
+    str_scrappy_db = []
+
+    # start the soup
+    soup = BeautifulSoup(source, "html.parser")
+    tables=soup.select('table') # fixed html tag
+
+    str_html = str(tables)
+    str_df_list = pd.read_html(str_html) # LIST type
+
+    for i in range(1):
+        add_list = str_df_list[0]
+        str_scrappy_db.append(add_list)
+
+
+    pass
+
+
 
