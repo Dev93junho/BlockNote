@@ -14,7 +14,7 @@ def home():
 
 @app.route('/result')
 def result():
-    return scrappy
+    return render_template('scrap-space.html')
     
     
 ########## Login Module ##############
