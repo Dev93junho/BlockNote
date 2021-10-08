@@ -27,7 +27,8 @@ class Application(QMainWindow):
         # soup = BeautifulSoup(html_doc, 'html.parser')
 
 
-        page_url = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex='
+        page_url = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=' # main page scrap
+        # details = 'https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out/{lawnum}/detailRP' # details scrap
         data=[]
 
         for no in range(1, 76):
@@ -35,7 +36,7 @@ class Application(QMainWindow):
             f = urllib.request.urlopen(url)
             source = f.read()
             
-            # start the soup 
+            # start the soup for page scrap
             soup = BeautifulSoup(source, "html.parser")
             tables=soup.select('table', encoding = 'cp949') # fixed html tag
 
@@ -52,7 +53,7 @@ class Application(QMainWindow):
 
             # change the order
             df.columns = ['의안명','발의의원', '상임위', '국회현황', '의결결과','의안번호']
-            final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']]
+            final = df[['의안번호', '국회현황','발의의원','의안명','의결결과','상임위']] # need to add details columns
             final.to_excel("result.xlsx", encoding = 'cp949')
 
             break
