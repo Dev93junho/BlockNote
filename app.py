@@ -13,8 +13,11 @@ def home():
 @app.route('/result', methods=['GET', 'POST'])
 def result():
     return render_template('scrap-space.html')
-    
-    
+
+@app.route('/docs', methods=['POST'])
+def docs():
+    pass
+
 # Login module
 # member db
 @app.route('/login')
