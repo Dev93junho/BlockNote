@@ -16,7 +16,7 @@ def result():
 
 @app.route('/docs', methods=['POST'])
 def docs():
-    pass
+    return render_template('docspace.html')
 
 # Login module
 # member db
