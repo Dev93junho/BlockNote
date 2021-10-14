@@ -14,7 +14,7 @@ def home():
 def result():
     return render_template('scrap-space.html')
 
-@app.route('/docs', methods=['POST'])
+@app.route('/docs', methods=['GET','POST'])
 def docs():
     return render_template('docspace.html')
 
