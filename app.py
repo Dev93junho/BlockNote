@@ -7,15 +7,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
-
-# result print page
-@app.route('/result', methods=['GET', 'POST'])
-def result():
-    return render_template('scrap-space.html')
-
-@app.route('/docs', methods=['GET','POST'])
-def docs():
     return render_template('docspace.html')
 
 # Login module
