@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+<<<<<<< Updated upstream
     return render_template('index.html')
 
 # result print page
@@ -17,6 +18,9 @@ def result():
 @app.route('/docs', methods=['POST'])
 def docs():
     pass
+=======
+    return render_template('docspace.html')
+>>>>>>> Stashed changes
 
 # Login module
 # member db
