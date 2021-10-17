@@ -11,6 +11,7 @@
 - If you selected table, It would be scrapped table component on full-script
 
 ### Examples
+![Filed_Init](https://user-images.githubusercontent.com/40736396/137613343-29cec3a5-dc9c-44b9-a90b-ae1b58ef802b.png)
 
 ### Contributors
 #### JH Shin
