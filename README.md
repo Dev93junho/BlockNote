@@ -10,12 +10,4 @@
 - table, p, a, ... etc
 - If you selected table, It would be scrapped table component on full-script
 
-### Examples
-- Enterd First page
-![Filed_Init](https://user-images.githubusercontent.com/40736396/137613343-29cec3a5-dc9c-44b9-a90b-ae1b58ef802b.png)
-- Clicked Scrap button 
-![clicked scrap display](https://user-images.githubusercontent.com/40736396/137613972-fe26a9fc-b973-43db-9f86-cbc7b8c5490b.png)
 
-### Contributors
-#### JH Shin
-#### BS Kang
