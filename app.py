@@ -18,8 +18,15 @@ def home():
 def report(scrap_db):
     pass
 
+# text editor module
+@app.route('/editor')
+def editor():
+    pass
 
 # writing function
+@app.route('/document')
+def document():
+    pass
 
 # Login module
 @app.route('/login', methods=['GET','POST'])
