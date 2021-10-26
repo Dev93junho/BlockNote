@@ -40,9 +40,9 @@ def str_scrappy():
 
     # start the soup
     soup = BeautifulSoup(source, "html.parser")
-    tables=soup.select('table') # fixed html tag
+    string=soup.select('p') # p tag scrapping
 
-    str_html = str(tables)
+    str_html = str(string)
     str_df_list = pd.read_html(str_html) # LIST type
 
     for i in range(1):
