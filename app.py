@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import os
-from scrappy import *
+import scrappy
+
+DEFAULT_PORT = 5000
+DEFAULT_HOST = '0.0.0.0'
 
 app = Flask(__name__)
 
@@ -9,12 +12,8 @@ app = Flask(__name__)
 def home():
     return render_template('docspace.html')
 
-@app.route('/documents', methods=['GET', 'POST'])
-def call_api():
-    return render_template('docspace.html')
-
-@app.route('/documents')
-def report():
+@app.route('/sidebar/<scrap_db>')
+def report(scrap_db):
     print(request.args.get('url'))
     pass
 
