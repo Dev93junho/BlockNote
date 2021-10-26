@@ -13,19 +13,17 @@ app = Flask(__name__)
 def home():
     return render_template('docspace.html')
 
-# display scrappy data to sidebar
-@app.route('/sidebar/<scrap_db>')
-def report(scrap_db):
-    pass
-
 # text editor module
-@app.route('/editor')
 def editor():
     pass
 
 # writing function
-@app.route('/document')
 def document():
+    pass
+
+# display scrappy data to sidebar
+@app.route('/sidebar/<scrap_db>')
+def report(scrap_db):
     pass
 
 # Login module
