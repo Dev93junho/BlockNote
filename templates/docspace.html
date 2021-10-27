@@ -3,15 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>작성중입니다</title>
-        <style>
-            body{margin: 0; background-color: #fdfdfd; }
-            .nav{width: 100%; height: 50px; background: #292626; margin-left: auto; margin-right: auto; display: inline-block;}
-            #logo{margin-top: auto; margin-bottom: auto; margin-left: 1%;}
-            #logo>img{width: 100px; height: 30px;}
-            .word_sheet{padding: 1em; width: 60%; height: 70rem; margin-left: auto; margin-right: auto; margin-top: 1em; background-color: #fff; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));}
-            #board{border-style: none; width: 30.8rem; height: 70rem;}
-            .scrappy_fab>input{position: fixed; top: 80%; left: 90%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);width: 100px; height: 100px; border-radius: 50px; border-style: none; background-color: #fff;}
-        </style>
+        <link rel="stylesheet" href="../static/style.css">
     </head>
     <body>
         <div class="nav">
@@ -25,6 +17,7 @@
             </form>
         </div>
         <form class="scrappy_fab">
+            <img src="{{ url_for('static', filename='image/icon_scrap.png')}}">
             <input type="button" value="스크랩">
         </form>
     </body>
