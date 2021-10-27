@@ -11,14 +11,19 @@
                 <img src="{{ url_for('static', filename='image/FiledLogo.png')}}">
             </div>
         </div>
-        <div class="result_disiplay" method="get">
-            <form class="word_sheet">
-                <input type="text" id="board">
-            </form>
-        </div>
-        <form class="scrappy_fab">
-            <img src="{{ url_for('static', filename='image/icon_scrap.png')}}">
-            <input type="button" value="스크랩">
-        </form>
+            <div class="container">
+                <form class="word_sheet">
+                    <input type="text" id="board">
+                </form>
+                <div class="sidebar">
+                    <div class="put">d</div>
+                    <div class="sm-url"><input type="search" placeholder="url"></div>
+                    <div class="tb_box">d</div>
+                    <div class="str_box">d</div>
+                </div>
+            </div>
+            <!-- <form class="scrappy_fab">
+                <input type="button" value="스크랩">
+            </form> -->
     </body>
 </html>
