@@ -26,7 +26,8 @@ def document():
 def searched(scrap_db):
     input = request.args.get('url')
     scrappy.url_searched(input)
-    pass 
+    print(sc)
+    pass
 
 # Login module
 @app.route('/login', methods=['GET','POST'])

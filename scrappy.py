@@ -7,45 +7,56 @@
 6. string_scp is display p tag 
 
 ** Created by JHShin in Oct.2021 ** 
-
 '''
 from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
 import pandas as pd
 
+# search the url
+def url_search(input):
+    # initialize
+    url = input
+    data_tmp = []
+    f = urllib.request.urlopen(url)
+    source = f.read()
 
+    #start the soup
+    soup = BeautifulSoup(source, "html.parser")
+    table = soup.select('tb') # table tag scrap
+    string = soup.select('p') # p tag scrap
 
+    data_tmp = str(table), str(string)
+
+    return 
+    pass
+
+'''
+start the filtering to material blocks
+
+'''
+
+# filtered table tag and make drag&drop block
 def table_scrappy(input_url):
-    page_url = input_url
     table_scrappy_db=[]
 
-    for no in range(1, 76):
-        url = page_url + str(no)
-        f = urllib.request.urlopen(url)
-        source = f.read()
-        
-        # start the soup 
-        soup = BeautifulSoup(source, "html.parser")
-        tables=soup.select('table') # fixed html tag
+    table_html = str(tables)
+    table_df_list = pd.read_html(table_html) # LIST type
 
-        table_html = str(tables)
-        table_df_list = pd.read_html(table_html) # LIST type
+    # <tb> to </tb> 까지 한개의 유닛
+    # 
 
-        for i in range(1):
-            add_list = table_df_list[0]
-            table_scrappy_db.append(add_list)
-        break
+    for i in range(1):
+        add_list = table_df_list[0]
+        table_scrappy_db.append(add_list)
 
 
-# need to change the source for drag area scrapping
+
+    pass 
+
+
+# filtered tag about string and make drag&drop block
 def str_scrappy(input_url):
-    page_url = input()
-    str_scrappy_db = []
-
-    # start the soup
-    soup = BeautifulSoup(source, "html.parser")
-    string=soup.select('p') # p tag scrapping
 
     str_html = str(string)
     str_df_list = pd.read_html(str_html) # LIST type
@@ -55,9 +66,4 @@ def str_scrappy(input_url):
         str_scrappy_db.append(add_list)
 
 
-    pass
-
-
-
-def img_scrappy():
     pass
