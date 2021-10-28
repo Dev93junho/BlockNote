@@ -1,7 +1,10 @@
 '''
 1. this is scrappy API for HTML document
 2. Configurated for table, img, str scrap
-
+3. url input and scrapping all html structure
+4. distribute data to other module
+5. table_scp is display table tag 
+6. string_scp is display p tag 
 
 ** Created by JHShin in Oct.2021 ** 
 
@@ -10,6 +13,8 @@ from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
 import pandas as pd
+
+
 
 def table_scrappy(input_url):
     page_url = input_url
@@ -34,7 +39,7 @@ def table_scrappy(input_url):
 
 
 # need to change the source for drag area scrapping
-def str_scrappy():
+def str_scrappy(input_url):
     page_url = input()
     str_scrappy_db = []
 
