@@ -2,11 +2,14 @@ from flask import Flask, render_template, request # data를 송수신하는 기�
 from werkzeug.utils import secure_filename
 import os
 import scrappy
+from pymongo import MongoClient
 
 DEFAULT_PORT = 5000
 DEFAULT_HOST = '0.0.0.0'
 
 app = Flask(__name__)
+# import mongoDB
+client = MongoClient('localhost', 27017)
 
 # index page
 @app.route('/', methods=['GET', 'POST'])
