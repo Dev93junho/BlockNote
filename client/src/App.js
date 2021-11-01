@@ -1,6 +1,6 @@
 import {Deploy} from './Component/Deploy/Deploy';
 import {useState, useEffect} from 'react';
-
+// fetched with server
 function App() {
   const [state, setState] = useState({})
 
