@@ -5,7 +5,7 @@ function App() {
   const [state, setState] = useState({})
 
   useEffect(() => {
-    fetch("/api").then(response => {
+    fetch("/server").then(response => {
       if(response.staus == 200){
         return response.json()
       }
