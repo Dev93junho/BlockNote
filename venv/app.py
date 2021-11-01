@@ -8,7 +8,7 @@ from pymongo import MongoClient
 DEFAULT_PORT = 5000
 DEFAULT_HOST = '0.0.0.0'
 
-app = Flask(__name__, static_folder='client/build', static_url_path='plz input')
+app = Flask(__name__, static_folder='./client/build', static_url_path='plz input')
 CORS(app)
 '''
 If you want to change the Environment state to production,
