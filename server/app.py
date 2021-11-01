@@ -26,20 +26,12 @@ def home():
 def serve():
     return send_from_directory(app.static_folder, 'docspace.html')
 
-# text editor module
-def editor():
-    pass
-
-# writing function
-def document():
-    pass
-
 # display scrappy data to sidebar
 @app.route('/sidebar/<scrap_db>')
 def searched(scrap_db):
     input = request.args.get('url')
     scrappy.url_searched(input)
-    print(sc)
+    
     pass
 
 # Login module
