@@ -12,7 +12,6 @@ from os import stat_result
 from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
-import pandas as pd
 
 # search the url
 def url_search(input):
