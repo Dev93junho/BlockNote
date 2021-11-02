@@ -13,7 +13,7 @@ import urllib.request
 import numpy as np
 import pandas as pd
 
-# search the url
+# searched & scrapped all tag components in the url
 def url_search(input):
     # initialize
     url = input
