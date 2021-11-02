@@ -8,6 +8,7 @@
 
 ** Created by JHShin in Oct.2021 ** 
 '''
+from os import stat_result
 from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
@@ -23,13 +24,12 @@ def url_search(input):
 
     #start the soup
     soup = BeautifulSoup(source, "html.parser")
-    table = soup.select('tb') # table tag scrap
+    table = soup.select('table') # table tag scrap
     string = soup.select('p') # p tag scrap
 
-    data_tmp = str(table), str(string)
+    data_tmp = table, string
 
-    return 
-    pass
+    return data_tmp
 
 '''
 start the filtering to material blocks
@@ -37,33 +37,23 @@ start the filtering to material blocks
 '''
 
 # filtered table tag and make drag&drop block
-def table_scrappy(input_url):
-    table_scrappy_db=[]
+def table_scrappy(tables):
+    ### tables is url_search(url)[0] ###
+    table_html = tables
 
-    table_html = str(tables)
-    table_df_list = pd.read_html(table_html) # LIST type
-
-    # <tb> to </tb> 까지 한개의 유닛
-    # 
-
-    for i in range(1):
-        add_list = table_df_list[0]
-        table_scrappy_db.append(add_list)
-
-
-
-    pass 
-
+    ### return list of table tag
+    return table_html
 
 # filtered tag about string and make drag&drop block
-def str_scrappy(input_url):
+def str_scrappy(string):
+    ### tables is url_search(url)[1] ###
+    str_html = string
 
-    str_html = str(string)
-    str_df_list = pd.read_html(str_html) # LIST type
+    ### return list of p tag
+    return str_html
 
-    for i in range(1):
-        add_list = str_df_list[0]
-        str_scrappy_db.append(add_list)
-
-
-    pass
+### test
+### result = url_search("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1");
+### print(table_scrappy(result[0]))
+### print()
+### print(str_scrappy(result[1]))
