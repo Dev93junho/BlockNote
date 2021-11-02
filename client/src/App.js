@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     fetch("/server").then(response => {
-      if(response.staus == 200){
+      if(response.status == 200){
         return response.json()
       }
     }).then(data => console.log(data))
@@ -15,8 +15,7 @@ function App() {
   })
   return (
     <div className="App">
-      {/* <Deploy prop={state}/> */}
-      <TextEditor /> 
+      <Deploy />
     </div>
   );
 }
