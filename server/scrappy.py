@@ -23,8 +23,10 @@ def url_search(input):
 
     #start the soup
     soup = BeautifulSoup(source, "html.parser")
-    table = soup.select('table') # table tag scrap
-    string = soup.select('p') # p tag scrap
+    table = soup.find_all(['tb', 'table'])
+    ### table = soup.select('table') # table tag scrap
+    string = soup.find_all('p')
+    ### string = soup.select('p') # p tag scrap
 
     data_tmp = table, string
 
@@ -52,7 +54,7 @@ def str_scrappy(string):
     return str_html
 
 ### test
-### result = url_search("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1");
-### print(table_scrappy(result[0]))
+result = url_search("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1");
+print(table_scrappy(result[0]))
 ### print()
 ### print(str_scrappy(result[1]))
