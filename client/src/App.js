@@ -1,6 +1,6 @@
 import {Deploy} from './Component/Deploy/Deploy';
 import {useState, useEffect} from 'react';
-import TextEditor from './TextEditor';
+// import TextEditor from './TextEditor';
 // fetched with server
 function App() {
   const [state, setState] = useState({})
@@ -15,8 +15,7 @@ function App() {
   })
   return (
     <div className="App">
-      {/* <Deploy prop={state}/> */}
-      <TextEditor /> 
+      <Deploy />
     </div>
   );
 }
