@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory # data를 송수신하는 기능을
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
-import scrappy
+# import scrappy
 from pymongo import MongoClient
 
 DEFAULT_PORT = 5000
