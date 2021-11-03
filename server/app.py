@@ -1,9 +1,10 @@
-from flask import Flask, send_from_directory # data를 송수신하는 기능을 가진것은 request
+from flask import Flask, send_from_directory,jsonify # data를 송수신하는 기능을 가진것은 request
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
 from core.scrappy import url_search
 from pymongo import MongoClient
+import requests
 
 DEFAULT_PORT = 5000
 DEFAULT_HOST = '0.0.0.0'
@@ -17,17 +18,27 @@ Go to '.env', rewrite develop to production
 # import mongoDB
 client = MongoClient('localhost', 27017)
 
-# index page    
+# index page
 # @app.route('/', methods=['GET', 'POST'])
 # @cross_origin()
 # def home():
 #     pass
 
-# index page    
-@app.route('/', methods=['GET', 'POST'])
+# index page
+@app.route('/index', methods=['GET', 'POST'])
 @cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/post', methods=['GET', 'POST'])
+def post():
+    if requests.methods == 'POST':
+        value = requests.form['url']
+        value = str(value)
+        result = url_search(value)
+        print(result)
+        # need to output with json 
 
 # display scrappy data to topbar
 # @app.route('/dbtank/<scrap_db>')
@@ -35,7 +46,6 @@ def serve():
 # def searched(url): # need to receive data from client
 #     input = request.args.get('url')
 #     scrappy.url_searched(input)
-    
 #     pass
 
 # Login module
@@ -49,7 +59,7 @@ def serve():
 
 # @app.route('/user/<username>')
 # def get_username(username):
-#     return 
+#     return
 
 if __name__ == "__main__":
     app.run(debug=True)

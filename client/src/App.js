@@ -1,14 +1,16 @@
 import {Deploy} from './Component/Deploy/Deploy';
 import {useState, useEffect} from 'react';
 
+const flaskURL = "http://localhost:5000"
 
 function App() {
   const [state, setState] = useState({})
 
   // fetch can be call the API
+  // fetch(back-end address)
   useEffect(() => {
-    fetch("/server").then(response => {
-      if(response.status == 200){
+    fetch(`${flaskURL}/index`).then(response => {
+      if(response.status === 200){
         return response.json()
       }
     }).then(data => console.log(data))
