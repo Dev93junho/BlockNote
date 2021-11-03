@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory # data를 송수신하는 기능을 가진것은 request
+from flask import Flask, send_from_directory,jsonify # data를 송수신하는 기능을 가진것은 request
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
@@ -38,6 +38,7 @@ def post():
         value = str(value)
         result = url_search(value)
         print(result)
+        # need to output with json 
 
 # display scrappy data to topbar
 # @app.route('/dbtank/<scrap_db>')
