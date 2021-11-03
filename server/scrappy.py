@@ -54,7 +54,7 @@ def str_scrappy(string):
     return str_html
 
 ### test
-result = url_search("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1");
-print(table_scrappy(result[0]))
+### result = url_search("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1");
+### print(table_scrappy(result[0]))
 ### print()
 ### print(str_scrappy(result[1]))
