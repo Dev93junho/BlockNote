@@ -1,5 +1,6 @@
 import React from 'react';
+import TextEditor from '../../TextEditor';
 
-export const Deploy = ({prop}) => {
-    return(<div>{prop.tutorial}</div>)
+export const Deploy = () => {
+    return(<TextEditor />)
 }
