@@ -2,13 +2,13 @@ from flask import Flask, send_from_directory # data를 송수신하는 기능을
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
-from scrappy import url_search
+from core.scrappy import url_search
 from pymongo import MongoClient
 
 DEFAULT_PORT = 5000
 DEFAULT_HOST = '0.0.0.0'
 
-app = Flask(__name__, static_folder='client/build', static_url_path='')
+app = Flask(__name__, static_folder='../client/build', static_url_path='')
 CORS(app)
 '''
 If you want to change the Environment state to production,
@@ -30,13 +30,13 @@ def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 # display scrappy data to topbar
-@app.route('/dbtank/<scrap_db>')
-@cross_origin()
-def searched(url): # need to receive data from client
-    input = request.args.get('url')
-    scrappy.url_searched(input)
+# @app.route('/dbtank/<scrap_db>')
+# @cross_origin()
+# def searched(url): # need to receive data from client
+#     input = request.args.get('url')
+#     scrappy.url_searched(input)
     
-    pass
+#     pass
 
 # Login module
 # @app.route('/login', methods=['GET','POST'])
@@ -51,5 +51,5 @@ def searched(url): # need to receive data from client
 # def get_username(username):
 #     return 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
