@@ -8,10 +8,9 @@
 
 ** Created by JHShin in Oct.2021 ** 
 '''
-from os import stat_result
+
 from bs4 import BeautifulSoup
 import urllib.request
-import numpy as np
 
 # searched & scrapped all tag components in the url
 def url_search(input):
