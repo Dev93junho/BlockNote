@@ -1,10 +1,11 @@
 import {Deploy} from './Component/Deploy/Deploy';
 import {useState, useEffect} from 'react';
-// import TextEditor from './TextEditor';
-// fetched with server
+import Scrapper from './Component/Scrapper/Scrapper';
+
 function App() {
   const [state, setState] = useState({})
 
+  // fetch can be call the API
   useEffect(() => {
     fetch("/server").then(response => {
       if(response.status == 200){
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Deploy />
+      <Scrapper />
     </div>
   );
 }
