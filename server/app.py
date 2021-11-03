@@ -18,14 +18,14 @@ Go to '.env', rewrite develop to production
 # import mongoDB
 client = MongoClient('localhost', 27017)
 
-# index page    
+# index page
 # @app.route('/', methods=['GET', 'POST'])
 # @cross_origin()
 # def home():
 #     pass
 
-# index page    
-@app.route('/', methods=['GET', 'POST'])
+# index page
+@app.route('/index', methods=['GET', 'POST'])
 @cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
@@ -33,8 +33,8 @@ def serve():
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
-    if request.methods == 'POST':
-        value = request.form['url']
+    if requests.methods == 'POST':
+        value = requests.form['url']
         value = str(value)
         result = url_search(value)
         print(result)
@@ -45,7 +45,6 @@ def post():
 # def searched(url): # need to receive data from client
 #     input = request.args.get('url')
 #     scrappy.url_searched(input)
-    
 #     pass
 
 # Login module
@@ -59,7 +58,7 @@ def post():
 
 # @app.route('/user/<username>')
 # def get_username(username):
-#     return 
+#     return
 
 if __name__ == "__main__":
     app.run(debug=True)
