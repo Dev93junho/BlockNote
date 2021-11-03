@@ -7,9 +7,10 @@ function App() {
   const [state, setState] = useState({})
 
   // fetch can be call the API
+  // fetch(back-end address)
   useEffect(() => {
-    fetch('${flaskURL}/').then(response => {
-      if(response.status == 200){
+    fetch(`${flaskURL}/index`).then(response => {
+      if(response.status === 200){
         return response.json()
       }
     }).then(data => console.log(data))
