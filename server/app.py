@@ -4,6 +4,7 @@ import os
 from flask_cors import CORS, cross_origin
 from core.scrappy import url_search
 from pymongo import MongoClient
+import requests
 
 DEFAULT_PORT = 5000
 DEFAULT_HOST = '0.0.0.0'
@@ -28,6 +29,15 @@ client = MongoClient('localhost', 27017)
 @cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/post', methods=['GET', 'POST'])
+def post():
+    if request.methods == 'POST':
+        value = request.form['url']
+        value = str(value)
+        result = url_search(value)
+        print(result)
 
 # display scrappy data to topbar
 # @app.route('/dbtank/<scrap_db>')
