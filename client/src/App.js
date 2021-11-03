@@ -1,6 +1,6 @@
 import {Deploy} from './Component/Deploy/Deploy';
 import {useState, useEffect} from 'react';
-import Scrapper from './Component/Scrapper/Scrapper';
+
 
 function App() {
   const [state, setState] = useState({})
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <Deploy />
-      <Scrapper />
     </div>
   );
 }
