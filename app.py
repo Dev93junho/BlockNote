@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory # data를 송수신하는 기능을
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
-# import scrappy
+from scrappy import url_search
 from pymongo import MongoClient
 
 DEFAULT_PORT = 5000
@@ -29,13 +29,14 @@ client = MongoClient('localhost', 27017)
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
-# display scrappy data to sidebar
-# @app.route('/sidebar/<scrap_db>')
-# def searched(scrap_db):
-#     input = request.args.get('url')
-#     scrappy.url_searched(input)
+# display scrappy data to topbar
+@app.route('/dbtank/<scrap_db>')
+@cross_origin()
+def searched(url): # need to receive data from client
+    input = request.args.get('url')
+    scrappy.url_searched(input)
     
-#     pass
+    pass
 
 # Login module
 # @app.route('/login', methods=['GET','POST'])
