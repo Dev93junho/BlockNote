@@ -13,13 +13,13 @@ width: 100px;
 height: 55px;
 `
 
-export default function Scrapper = ({prop})=> {
+export default function Scrapper () {
     return (
         <ScrapSidebar>
             {/* before : btn-menu , after : full-menu */}
             <div className="CtrlSize">1</div>
             <div className="InputUrl-sm">
-                <InputUrl  methods={['POST']}>
+                <InputUrl  methods={['GET']}>
                     <input type="url" name="url" placeholder="plz input url" />
                     <button type="submit">enter</button>
                 </InputUrl>
