@@ -54,7 +54,7 @@ def str_scrappy(data):
     return str_html
 
 ### test
-result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
+# result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
 ### print(table_scrappy(result[0]))
 ### print()
-print([str("<p>"+x.text+"</p>") for x in str_scrappy(result[1]) ])
+# print([str("<p>"+x.text+"</p>") for x in str_scrappy(result[1]) ])

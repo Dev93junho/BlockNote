@@ -1,19 +1,11 @@
 from flask import Flask, render_template, send_from_directory,jsonify, request # data를 송수신하는 기능을 가진것은 request
-from werkzeug.utils import secure_filename
+from werkzeug.utils import redirect, secure_filename
 import os
 from flask_cors import CORS, cross_origin
 from core.scrappy import *
 from pymongo import MongoClient
 import requests
 import json
-import html_to_json
-
-html_string = """<head>
-    <title>Test site</title>
-    <meta charset="UTF-8"></head>"""
-output_json = html_to_json.convert(html_string)
-print(output_json)
-
 
 # app = Flask(__name__, static_folder='../client/build', static_url_path='')
 app = Flask(__name__)
@@ -25,19 +17,24 @@ Go to '.env', rewrite develop to production
 '''
 
 # index page
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 @cross_origin()
 def serve():
     return render_template('index.html')
 
 
-@app.route('/post', methods=['POST'])
+@app.route('/post')
+@cross_origin()
 def post():
-    value = request.form["url"]
-    search_result = str_scrappy(url_search(value))
+    try:
+        input = request.args.get('url')
+        search_result = str_scrappy(url_search(input))
 
-    print(search_result)
-    return 
+        # print(search_result)
+        return render_template("test_result.html", searchingBy=search_result)
+    except:
+        return redirect("/") # If block the crawl, redirect to index page
+
 
 
 if __name__ == "__main__":
