@@ -2,10 +2,17 @@ from flask import Flask, render_template, send_from_directory,jsonify, request #
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
-from core.scrappy import url_search
+from core.scrappy import *
 from pymongo import MongoClient
 import requests
 import json
+import html_to_json
+
+html_string = """<head>
+    <title>Test site</title>
+    <meta charset="UTF-8"></head>"""
+output_json = html_to_json.convert(html_string)
+print(output_json)
 
 
 # app = Flask(__name__, static_folder='../client/build', static_url_path='')
@@ -27,7 +34,8 @@ def serve():
 @app.route('/post', methods=['POST'])
 def post():
     value = request.form["url"]
-    search_result = url_search(value)
+    search_result = str_scrappy(url_search(value))
+
     print(search_result)
     return 
 

@@ -38,17 +38,17 @@ start the filtering to material blocks
 '''
 
 # filtered table tag and make drag&drop block
-def table_scrappy(tables):
+def table_scrappy(data):
     ### tables is url_search(url)[0] ###
-    table_html = tables
+    table_html = data[0]
 
     ### return list of table tag
     return table_html
 
 # filtered tag about string and make drag&drop block
-def str_scrappy(string):
+def str_scrappy(data):
     ### tables is url_search(url)[1] ###
-    str_html = string
+    str_html = data[1]
 
     ### return list of p tag
     return str_html
