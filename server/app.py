@@ -19,10 +19,10 @@ Go to '.env', rewrite develop to production
 client = MongoClient('localhost', 27017)
 
 # index page
-# @app.route('/', methods=['GET', 'POST'])
-# @cross_origin()
-# def home():
-#     pass
+@app.route('/', methods=['GET', 'POST'])
+@cross_origin()
+def test():
+    return {"tutorial" : "ddongmangs"}
 
 # index page
 @app.route('/index', methods=['GET', 'POST'])
@@ -31,15 +31,12 @@ def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 
-@app.route('/post', methods=['GET', 'POST'])
+@app.route('/post', methods=['POST'])
 def post():
-    if requests.methods == 'POST':
-        value = requests.form['url']
-        value = str(value)
-        result = url_search(value)
-        print(result)
-        # need to output with json 
-
+    value = request.get_json()
+    search_result = url_search(value['url'])
+    return json.dumps(str_scrappy(search_result))
+# need to output with json
 # display scrappy data to topbar
 # @app.route('/dbtank/<scrap_db>')
 # @cross_origin()

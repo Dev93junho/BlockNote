@@ -13,7 +13,7 @@ width: 100px;
 height: 55px;
 `
 
-export default function Scrapper() {
+export default function Scrapper = ({prop})=> {
     return (
         <ScrapSidebar>
             {/* before : btn-menu , after : full-menu */}
