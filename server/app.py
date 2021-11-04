@@ -1,10 +1,11 @@
-from flask import Flask, render_template, send_from_directory,jsonify # data를 송수신하는 기능을 가진것은 request
+from flask import Flask, render_template, send_from_directory,jsonify, request # data를 송수신하는 기능을 가진것은 request
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS, cross_origin
 from core.scrappy import url_search
 from pymongo import MongoClient
 import requests
+import json
 
 
 # app = Flask(__name__, static_folder='../client/build', static_url_path='')
@@ -25,9 +26,10 @@ def serve():
 
 @app.route('/post', methods=['POST'])
 def post():
-    value = request.get_json()
-    search_result = url_search(value['url'])
-    return json.dumps(str_scrappy(search_result))
+    value = request.form["url"]
+    search_result = url_search(value)
+    print(search_result)
+    return 
 
 
 if __name__ == "__main__":
