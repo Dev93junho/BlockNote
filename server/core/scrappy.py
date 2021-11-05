@@ -51,7 +51,7 @@ def str_scrappy(data):
     str_html = data[1]
 
     ### return list of p tag
-    return str_html
+    return [str("<p>"+x.text+"</p>") for x in str_html if x!=""]
 
 ### test
 # result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
