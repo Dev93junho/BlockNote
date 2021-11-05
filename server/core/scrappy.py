@@ -12,6 +12,7 @@ from os import stat_result
 from bs4 import BeautifulSoup
 import urllib.request
 import numpy as np
+import json
 
 # searched & scrapped all tag components in the url
 def url_search(input):
@@ -51,8 +52,8 @@ def str_scrappy(data):
     str_html = data[1]
 
     ### return list of p tag
-    return [str("<p>"+x.text+"</p>") for x in str_html if x!=""]
-
+    result = json.dumps([str(x.text) for x in str_html if x!=""], ensure_ascii = False)
+    return result
 ### test
 # result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
 ### print(table_scrappy(result[0]))
