@@ -7,8 +7,8 @@ from pymongo import MongoClient
 import requests
 import json
 
-# app = Flask(__name__, static_folder='../client/build', static_url_path='')
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../client/build', static_url_path='')
+# app = Flask(__name__)
 CORS(app)
 
 '''
@@ -20,7 +20,7 @@ Go to '.env', rewrite develop to production
 @app.route('/')
 @cross_origin()
 def serve():
-    return render_template('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/post')
