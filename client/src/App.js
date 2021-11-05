@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Scrapper from './Component/Scrapper/Scrapper';
+import axios from "axios"
 
 const flaskURL = "http://localhost:5000"
 
@@ -9,7 +10,7 @@ function App() {
   // fetch can be call the API
   // fetch(back-end address)
   useEffect(() => {
-    fetch(`${flaskURL}/post`, {
+    axios.get(`${flaskURL}/post/`, {
       'method' : 'GET',
       headers: {
         'Content-Type' :'application/json'
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Scrapper prop={state} />
+      <Scrapper props={state}/>
     </div>
   );
 }

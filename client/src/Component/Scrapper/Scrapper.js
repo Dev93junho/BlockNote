@@ -14,19 +14,16 @@ width: 100px;
 height: 55px;
 `
 
-const Output = Styled.div`
-width : 50%;
-
-`
-
-export default function Scrapper() {
+export default function Scrapper(props) {
     return (
         <ScrapSidebar>
-            <InputUrl  methods={['GET']}>
+            <InputUrl action={'/post'}  methods={['GET']}>
                 <input type="url" name="url" placeholder="plz input url" />
                 <button type="submit">enter</button>
             </InputUrl>
-            <Output />
+            <div>
+                <p>{props}</p>
+            </div>
         </ ScrapSidebar>
     )
 }

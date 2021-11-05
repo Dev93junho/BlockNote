@@ -3,11 +3,12 @@
 2. Configurated for table, img, str scrap
 3. url input and scrapping all html structure
 4. distribute data to other module
-5. table_scp is display table tag 
-6. string_scp is display p tag 
+5. table_scp is display table tag
+6. string_scp is display p tag
 
-** Created by JHShin in Oct.2021 ** 
+** Created by JHShin in Oct.2021 **
 '''
+from flask_restful import Api,Resource,reqparse
 from os import stat_result
 from bs4 import BeautifulSoup
 import urllib.request
