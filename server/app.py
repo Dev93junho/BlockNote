@@ -1,5 +1,5 @@
 from flask import Flask, render_template, send_from_directory, request
-from flask_restful import Api, Resouce, reqpasre
+# from flask_restful import Api, Resouce, reqpasre
 from werkzeug.utils import redirect, secure_filename
 import os
 from flask_cors import CORS, cross_origin
@@ -8,8 +8,8 @@ from pymongo import MongoClient
 import requests
 import json
 
-app = Flask(__name__, static_folder='../client/build', static_url_path='')
-# app = Flask(__name__)
+# app = Flask(__name__, static_folder='../client/build', static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 '''
@@ -21,7 +21,7 @@ Go to '.env', rewrite develop to production
 @app.route('/', defaults={'path':''})
 @cross_origin()
 def serve(path):
-    return send_from_directory(app.static_folder, 'index.html')
+    return render_template('index.html')
 
 
 @app.route('/post/<url>')
