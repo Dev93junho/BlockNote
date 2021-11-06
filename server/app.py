@@ -18,21 +18,21 @@ Go to '.env', rewrite develop to production
 '''
 
 # index page
-@app.route('/', defaults={'path':''})
+@app.route('/')
 @cross_origin()
 def serve(path):
     return render_template('index.html')
 
 
-@app.route('/post/<url>')
+@app.route('/post')
 @cross_origin()
 def post():
     try:
         input = request.args.get('url')
         search_result = str_scrappy(url_search(input))
 
-        # print(search_result)
-        return json.dumps(search_result)
+        print(search_result)
+        return render_template('test_result.html')
     except:
         return redirect("/") # If block the crawl, redirect to index page
 
