@@ -20,7 +20,7 @@ Go to '.env', rewrite develop to production
 # index page
 @app.route('/')
 @cross_origin()
-def serve(path):
+def serve():
     return render_template('index.html')
 
 
