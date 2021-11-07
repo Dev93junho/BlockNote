@@ -7,13 +7,18 @@ body {
     margin: 0;
 }
 
+/* .main{
+    display: flex;
+} */
+
 .container .ql-editor {
-    width: 8.5in;
+    width: 80%;
     min-height: 11in;
     padding: 1in;
     margin: 1rem;
     box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
     background-color: #ffffff;
+    flex-direction: column;
 }
 
 .container .ql-container.ql-snow{
@@ -31,6 +36,10 @@ body {
     background-color: #292626;    
     border: none;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+}
+
+.sidebar{
+    text-align: center;
 }
 
 @page {

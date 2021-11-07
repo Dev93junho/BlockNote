@@ -32,7 +32,7 @@ def post():
         search_result = str_scrappy(url_search(input))
 
         print(search_result)
-        return render_template('test_result.html')
+        return 
     except:
         return redirect("/") # If block the crawl, redirect to index page
 

@@ -2,32 +2,42 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>BRICKdocs</title>
+	<title>BRICKdocs::: 당신의 글을 블럭처럼 쌓아가세요:::</title>
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+	<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 	<link href="../static/styles.css" rel="stylesheet">
 </head>
 <body>
-	<!-- Create the editor container -->
-	<div id="editor">
-	<p>Hello World!</p>
-	<p>Some initial <strong>bold</strong> text</p>
-	<p><br></p>
+	<div class="main">
+		<div class="board">
+			<!-- Create the toolbar container -->
+			<div id="toolbar">
+				<button class="ql-bold">Bold</button>
+				<button class="ql-italic">Italic</button>
+			</div>
+			<!-- Create the editor container -->
+			<div class="editor">
+			</div>
+		</div>
+
+		<!-- Craete the sidebar container-->
+		<div class="sidebar">
+			<h1> TEST CODE! </h1>
+			<form action="/post" method="get">
+			​	 <input type="url" required name="url" />
+				<button>scarp</button>
+			</form>
+			<h3>스크랩 결과 {{searchingBy}}</h3>
+		</div>
 	</div>
 
-	<div id="sidebar" action="test_result.thml">
-		<h1> TEST CODE! </h1>
-		<form action="/post" method="get">
-		​	 <input type="url" required name="url" />
-			<button>scarp</button>
-		</form>
-		<h2>스크랩 결과 {{searchingBy}}</h3>
-	</div>
 	<!-- Include the Quill library -->
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
+	<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>	
 	<!-- Initialize Quill editor -->
 	<script>
-	var quill = new Quill('#editor', {
+	var quill = new Quill('.editor', {
+		modules: { toolbar: '#toolbar' },
 		theme: 'snow'
 	});
 	</script>
