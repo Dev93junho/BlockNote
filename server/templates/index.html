@@ -31,7 +31,24 @@
 				<button>scrappy</button>
 			</form>
 			<h4>스크랩 결과</h4>
-			<p> {{searchingBy}}</p>
+				<ul id="content" class="list"></ul>
+				<script type="text/javascript">
+					let v = '{{searchingBy}}';
+					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
+					let w = JSON.parse(v);
+
+					let parent = document.querySelector('#content');
+					let fragment = document.createDocumentFragment();
+
+					for(e in w) {
+						let p = document.createElement('p');
+						p.textContent = w[e];
+						fragment.append(p);
+					};
+					//console.log(v);
+					parent.append(fragment);
+					console.log(w);
+				</script>
 		</div>
 	</div>
 
