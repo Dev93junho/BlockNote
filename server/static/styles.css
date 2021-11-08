@@ -7,9 +7,13 @@ body {
     margin: 0;
 }
 
-/* .main{
+.main{
     display: flex;
-} */
+}
+
+.board{
+    width: 60%;
+}
 
 .container .ql-editor {
     width: 80%;
@@ -39,7 +43,11 @@ body {
 }
 
 .sidebar{
+    width: 40%;
     text-align: center;
+}
+.sidebar>form>input{
+    width: 80%;
 }
 
 @page {
