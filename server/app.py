@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, send_from_directory, request, make_response
 # from flask_restful import Api, Resouce, reqpasre
 from werkzeug.utils import redirect, secure_filename
 import os
@@ -30,9 +30,9 @@ def post():
     try:
         input = request.args.get('url')
         search_result = str_scrappy(url_search(input))
-
+        res = make_response(search_result)
         print(search_result)
-        return 
+        return render_template('test_result.html', searchingBy=search_result)
     except:
         return redirect("/") # If block the crawl, redirect to index page
 

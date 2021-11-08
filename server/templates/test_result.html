@@ -10,8 +10,12 @@
 	<h3>스크랩 결과<br>{{searchingBy}}</h3>
 	<ul id="content" class="list"></ul>
 	<script type="text/javascript">
-		let v = '{{searchingBy}}'
-		console.log(v);
+		let v = '{{searchingBy}}';
+		//v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t");
+		//let w = JSON.parse(JSON.stringify(v));
+
+		//console.log(v);
+		console.log(JSON.parse(v));
 	</script>
 </body>
 </html>
