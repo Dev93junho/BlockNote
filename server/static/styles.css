@@ -5,6 +5,7 @@
 body {
     background-color: #f3f3f3;
     margin: 0;
+    padding: 1em;
 }
 
 .main{
@@ -13,6 +14,13 @@ body {
 
 .board{
     width: 60%;
+    height: 10in;
+}
+.board::-webkit-scrollbar, .sidebar::-webkit-scrollbar{
+    display: block;
+    width: 10em;
+    overflow: auto;
+    height: 2em;
 }
 
 .container .ql-editor {
@@ -49,6 +57,7 @@ body {
 .sidebar>form>input{
     width: 80%;
 }
+
 
 @page {
     margin: 1in;
