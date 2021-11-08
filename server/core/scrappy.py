@@ -55,9 +55,8 @@ def str_scrappy(data):
 
     ### return list of p tag
     result = json.dumps([str(x.text) for x in str_html if x!=""], ensure_ascii = False)
-    res = make_response(result)
 
-    return res
+    return result
 ### test
 # result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
 ### print(table_scrappy(result[0]))
