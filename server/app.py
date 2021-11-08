@@ -31,12 +31,13 @@ def post():
         input = request.args.get('url')
         search_result = str_scrappy(url_search(input))
 
-        return render_template('test_result.html', searchingBy=search_result)
-        #return render_template('test_result.html', searchingBy=search_result)
+
+        return render_template("index.html", searchingBy=search_result)
+      
     except:
         return redirect("/") # If block the crawl, redirect to index page
 
-
+# shin 
 
 if __name__ == "__main__":
     app.run(debug=True)
