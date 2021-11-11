@@ -9,11 +9,13 @@ body {
 
 .main{
     display: flex;
+    gap: 1em;
+    padding: 1em;
 }
 
 .board{
     width: 70%;
-    height: 10in;
+    height: 11in;
     box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
 }
 .board::-webkit-scrollbar, .sidebar::-webkit-scrollbar{
@@ -32,8 +34,9 @@ body {
 .container .ql-editor {
     width: 75%;
     min-height: 5in;
-    padding: 1in;
+    padding: 3in;
     margin: 1rem;
+    border-style: none;
     box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
     background-color: #ffffff;
     flex-direction: column;
@@ -46,8 +49,10 @@ body {
 }
 
 .sidebar{
+    position: sticky;
     width: 30%;
     text-align: center;
+    box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
 }
 .sidebar>form{
     vertical-align: middle;
@@ -55,9 +60,20 @@ body {
 .sidebar>form>input{
     width: 50%;
     height: 38px;
-    
 }
 
+.sidebar>.table_site{
+    width: fit-content;
+    height: 40%;
+    overflow-y: scroll;
+    border-style: #c4c4c4 1px solid;
+}
+.sidebar>.string_site{
+    width: fit-content;
+    height: 30%;
+    overflow-y: scroll;
+    border-style: #c4c4c4 1px solid;
+}
 
 @page {
     margin: 1in;
