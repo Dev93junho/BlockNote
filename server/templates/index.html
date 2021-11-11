@@ -45,19 +45,24 @@
 					let v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
 					
-					let w = JSON.parse(v);
+					try{
+						let w = JSON.parse(v);
 
-					let parent = document.querySelector('#table');
-					let fragment = document.createDocumentFragment();
+						let parent = document.querySelector('#table');
+						let fragment = document.createDocumentFragment();
 
-					for(e in w) {
-						let p = document.createElement('tbody');
-						p.textContent = w[e];
-						fragment.append(p);
-					};
-					//console.log(v);
-					parent.append(fragment);
-					console.log(w);
+						for(e in w) {
+							let p = document.createElement('tbody');
+							p.textContent = w[e];
+							fragment.append(p);
+						};
+						//console.log(v);
+						parent.append(fragment);
+						console.log(w);
+					}
+					catch(error){
+						console.log(error);
+					}
 				</script>
 			</div>
 			<div class="string_site">
@@ -66,19 +71,25 @@
 				<script type="text/javascript">
 					v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
-					w = JSON.parse(v);
+					
+					try{
+						w = JSON.parse(v);
 
-					parent = document.querySelector('#text');
-					fragment = document.createDocumentFragment();
+						parent = document.querySelector('#text');
+						fragment = document.createDocumentFragment();
 
-					for(e in w) {
-						let p = document.createElement('p');
-						p.textContent = w[e];
-						fragment.append(p);
-					};
-					//console.log(v);
-					parent.append(fragment);
-					console.log(w);
+						for(e in w) {
+							let p = document.createElement('p');
+							p.textContent = w[e];
+							fragment.append(p);
+						};
+						//console.log(v);
+						parent.append(fragment);
+						console.log(w);
+					}
+					catch(error){
+						console.log(error);
+					}
 				</script>
 			</div>
 			
