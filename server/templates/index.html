@@ -44,6 +44,7 @@
 				<script type="text/javascript">
 					let v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
+					
 					let w = JSON.parse(v);
 
 					let parent = document.querySelector('#table');
