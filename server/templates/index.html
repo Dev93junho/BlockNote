@@ -40,13 +40,13 @@
 			<h4>스크랩 결과</h4>
 			<div class="table_site">
 			<h5>표는 여기에</h5>
-			<ul id="content" class="list"></ul>
+			<ul id="table" class="list"></ul>
 				<script type="text/javascript">
 					let v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
 					let w = JSON.parse(v);
 
-					let parent = document.querySelector('#content');
+					let parent = document.querySelector('#table');
 					let fragment = document.createDocumentFragment();
 
 					for(e in w) {
@@ -61,14 +61,14 @@
 			</div>
 			<div class="string_site">
 			<h5>글은 여기에</h5>
-			<ul id="content" class="list"></ul>
+			<ul id="text" class="list"></ul>
 				<script type="text/javascript">
-					let v = '{{searchingBy}}';
+					v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
-					let w = JSON.parse(v);
+					w = JSON.parse(v);
 
-					let parent = document.querySelector('#content');
-					let fragment = document.createDocumentFragment();
+					parent = document.querySelector('#text');
+					fragment = document.createDocumentFragment();
 
 					for(e in w) {
 						let p = document.createElement('p');
