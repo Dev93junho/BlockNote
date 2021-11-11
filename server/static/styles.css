@@ -5,7 +5,6 @@
 body {
     background-color: #f3f3f3;
     margin: 0;
-    padding: 1em;
 }
 
 .main{
@@ -13,8 +12,9 @@ body {
 }
 
 .board{
-    width: 60%;
+    width: 70%;
     height: 10in;
+    box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
 }
 .board::-webkit-scrollbar, .sidebar::-webkit-scrollbar{
     display: block;
@@ -22,10 +22,16 @@ body {
     overflow: auto;
     height: 2em;
 }
-
+.toolbar{
+    position: sticky;
+    width: 100%;
+    background-color: #292626;
+    border-radius: 0 0 5px 5px;
+    box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
+}
 .container .ql-editor {
-    width: 80%;
-    min-height: 11in;
+    width: 75%;
+    min-height: 5in;
     padding: 1in;
     margin: 1rem;
     box-shadow:  0 0 5px 0 rgba(0, 0, 0, .5);
@@ -39,23 +45,17 @@ body {
     justify-content: center;
 }
 
-.container .ql-toolbar.ql-snow {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: #292626;    
-    border: none;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
-}
-
 .sidebar{
-    width: 40%;
+    width: 30%;
     text-align: center;
 }
+.sidebar>form{
+    vertical-align: middle;
+}
 .sidebar>form>input{
-    width: 80%;
+    width: 50%;
+    height: 38px;
+    
 }
 
 
