@@ -44,12 +44,12 @@
 				<script type="text/javascript">
 					let v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
-					
+
+					let parent = document.querySelector('#table');
+					let fragment = document.createDocumentFragment();
+
 					try{
 						let w = JSON.parse(v);
-
-						let parent = document.querySelector('#table');
-						let fragment = document.createDocumentFragment();
 
 						for(e in w) {
 							let p = document.createElement('tbody');
@@ -57,12 +57,15 @@
 							fragment.append(p);
 						};
 						//console.log(v);
-						parent.append(fragment);
-						console.log(w);
 					}
 					catch(error){
+						let p = document.createElement('p');
+						p.textContent = "fail to scrap";
+						fragment.append(p);
 						console.log(error);
 					}
+					
+					parent.append(fragment);
 				</script>
 			</div>
 			<div class="string_site">
@@ -72,11 +75,11 @@
 					v = '{{searchingBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
 					
-					try{
-						w = JSON.parse(v);
+					parent = document.querySelector('#text');
+					fragment = document.createDocumentFragment();
 
-						parent = document.querySelector('#text');
-						fragment = document.createDocumentFragment();
+					try{
+						let w = JSON.parse(v);
 
 						for(e in w) {
 							let p = document.createElement('p');
@@ -84,12 +87,15 @@
 							fragment.append(p);
 						};
 						//console.log(v);
-						parent.append(fragment);
-						console.log(w);
 					}
 					catch(error){
+						let p = document.createElement('p');
+						p.textContent = "fail to scrap";
+						fragment.append(p);
 						console.log(error);
 					}
+					
+					parent.append(fragment);
 				</script>
 			</div>
 			
