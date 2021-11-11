@@ -30,7 +30,7 @@ def url_search(input):
     soup = BeautifulSoup(source, "html.parser")
     table = soup.find_all(['tb', 'table'])
     ### table = soup.select('table') # table tag scrap
-    string = soup.find_all('p')
+    string = soup.find_all(['p','span'])
     ### string = soup.select('p') # p tag scrap
 
     data_tmp = table, string
