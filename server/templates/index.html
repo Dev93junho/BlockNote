@@ -42,9 +42,9 @@
 			<h5>표는 여기에</h5>
 			<ul id="table" class="list"></ul>
 				<script type="text/javascript">
-					let v = '{{searchingBy}}';
+					let v = '{{tableBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
-
+					console.log(v);
 					let parent = document.querySelector('#table');
 					let fragment = document.createDocumentFragment();
 
@@ -72,7 +72,7 @@
 			<h5>글은 여기에</h5>
 			<ul id="text" class="list"></ul>
 				<script type="text/javascript">
-					v = '{{searchingBy}}';
+					v = '{{strBy}}';
 					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
 					
 					parent = document.querySelector('#text');

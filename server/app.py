@@ -23,7 +23,7 @@ Go to '.env', rewrite develop to production
 def serve():
     result = json.dumps("", ensure_ascii = False)
 
-    return render_template('index.html',searchingBy=result)
+    return render_template("index.html", tableBy=result, strBy=result)
 
 
 @app.route('/post')
@@ -31,8 +31,9 @@ def serve():
 def post():
     try:
         input = request.args.get('url')
-        search_result = str_scrappy(url_search(input))
-        return render_template("index.html", searchingBy=search_result)
+        table_result = table_scrappy(url_search(input))
+        str_result = str_scrappy(url_search(input))
+        return render_template("index.html", tableBy=table_result, strBy=str_result)
       
     except:
         return redirect("/") # If block the crawl, redirect to index page

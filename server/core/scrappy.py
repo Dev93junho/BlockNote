@@ -30,7 +30,7 @@ def url_search(input):
     soup = BeautifulSoup(source, "html.parser")
     table = soup.find_all(['tb', 'table'])
     ### table = soup.select('table') # table tag scrap
-    string = soup.find_all(['p','span'])
+    string = soup.find_all(['p'])
     ### string = soup.select('p') # p tag scrap
 
     data_tmp = table, string
@@ -48,7 +48,9 @@ def table_scrappy(data):
     table_html = data[0]
 
     ### return list of table tag
-    return table_html
+    result = json.dumps([str(x.text) for x in table_html if x!=""], ensure_ascii = False)
+
+    return result
 
 # filtered tag about string and make drag&drop block
 def str_scrappy(data):
