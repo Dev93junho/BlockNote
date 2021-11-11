@@ -21,7 +21,9 @@ Go to '.env', rewrite develop to production
 @app.route('/')
 @cross_origin()
 def serve():
-    return render_template('index.html')
+    result = json.dumps("", ensure_ascii = False)
+
+    return render_template('index.html',searchingBy=result)
 
 
 @app.route('/post')
