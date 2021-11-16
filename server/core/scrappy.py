@@ -11,20 +11,21 @@
 
 # from flask_restful import Api,Resource,reqparse
 
-from os import stat_result
 from bs4 import BeautifulSoup
 import urllib.request
-import numpy as np
 import json
-from flask import jsonify, make_response
+import pandas
 
 # searched & scrapped all tag components in the url
 def url_search(input):
     # initialize
     url = input
     data_tmp = []
+    
     f = urllib.request.urlopen(url)
     source = f.read()
+
+    #list_rowcol = get_num_rowcol(url)
 
     #start the soup
     soup = BeautifulSoup(source, "html.parser")
@@ -61,8 +62,17 @@ def str_scrappy(data):
     result = json.dumps([str(x.text) for x in str_html if x!=""], ensure_ascii = False)
 
     return result
-### test
-# result = url_search("https://hleecaster.com/python-web-crawling-with-beautifulsoup/");
-### print(table_scrappy(result[0]))
-### print()
-# print([str("<p>"+x.text+"</p>") for x in str_scrappy(result[1]) ])
+
+#get num of row&column
+def get_num_rowcol(input):
+    url = input
+    df = pandas.read_html(url,header=0)
+    
+    result = []
+    
+    for i in df:
+        result.append({"row":len(i),"col":len(i.columns)})
+    print(result)
+    return result
+
+#get_num_rowcol('https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1')
