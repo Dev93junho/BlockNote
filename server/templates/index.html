@@ -43,7 +43,13 @@
 			<ul id="table" class="list"></ul>
 				<script type="text/javascript">
 					let v = '{{tableBy}}';
-					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
+					v=v.replace(/\n/g, "\\n")
+						.replace(/\r/g, "\\r")
+						.replace(/\t/g, "\\t")
+						.replace(/&#34;/g, "\"")
+						.replace(/&#39;/g,"\'")
+						.replace(/&gt;/g, "\>")
+						.replace(/&lt;/g,"\<");
 					console.log(v);
 					let parent = document.querySelector('#table');
 					let fragment = document.createDocumentFragment();
@@ -73,8 +79,14 @@
 			<ul id="text" class="list"></ul>
 				<script type="text/javascript">
 					v = '{{strBy}}';
-					v=v.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/&#34;/g, "\"");
-					
+					v=v.replace(/\n/g, "\\n")
+						.replace(/\r/g, "\\r")
+						.replace(/\t/g, "\\t")
+						.replace(/&#34;/g, "\"")
+						.replace(/&#39;/g,"\'")
+						.replace(/&gt;/g, "\>")
+						.replace(/&lt;/g,"\<");
+						
 					parent = document.querySelector('#text');
 					fragment = document.createDocumentFragment();
 
