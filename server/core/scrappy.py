@@ -14,7 +14,8 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import json
-import pandas
+import pandas as pd
+import numpy as np
 
 # searched & scrapped all tag components in the url
 def url_search(input):
@@ -50,7 +51,7 @@ def table_scrappy(data):
 
     ### return list of table tag
     result = json.dumps([str(x.text) for x in table_html if x!=""], ensure_ascii = False)
-
+    
     return result
 
 # filtered tag about string and make drag&drop block
@@ -64,15 +65,17 @@ def str_scrappy(data):
     return result
 
 #get num of row&column
-def get_num_rowcol(input):
+def table_scrappy_mk2(input):
     url = input
-    df = pandas.read_html(url,header=0)
+    df = pd.read_html(url)
     
     result = []
     
     for i in df:
-        result.append({"row":len(i),"col":len(i.columns)})
-    print(result)
+        row = len(i)
+        col = len(i.columns)
+        result.append({'row':row,'col':col,'text':[[i[x][n] for x in i] for n in range(row)]})
+    print(result[0]['text'])
     return result
 
-#get_num_rowcol('https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1')
+# table_scrappy_mk2("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1")   
