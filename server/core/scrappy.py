@@ -16,6 +16,7 @@ import urllib.request
 import json
 import pandas as pd
 import numpy as np
+import math
 
 # searched & scrapped all tag components in the url
 def url_search(input):
@@ -50,7 +51,7 @@ def table_scrappy(data):
     table_html = data[0]
 
     ### return list of table tag
-    result = json.dumps([str(x.text) for x in table_html if x!=""], ensure_ascii = False)
+    result = json.dumps([str(x.text) for x in table_html if x!=""], ensure_ascii=False)
     
     return result
 
@@ -60,7 +61,7 @@ def str_scrappy(data):
     str_html = data[1]
 
     ### return list of p tag
-    result = json.dumps([str(x.text) for x in str_html if x!=""], ensure_ascii = False)
+    result = json.dumps([str(x.text) for x in str_html if x!=""], ensure_ascii=False)
 
     return result
 
@@ -70,12 +71,15 @@ def table_scrappy_mk2(input):
     df = pd.read_html(url)
     
     result = []
-    
+
     for i in df:
         row = len(i)
         col = len(i.columns)
-        result.append({'row':row,'col':col,'text':[[i[x][n] for x in i] for n in range(row)]})
-    print(result[0]['text'])
+
+        # result.append({'row':row,'col':col,'text':[[i[x][n] for x in i] for n in range(row)]})
+        result.append([{x:'' if pd.isna(i[x][n]) else str(i[x][n]) for x in i} for n in range(row)])
+    
+    result = json.dumps(result, ensure_ascii=False)
     return result
 
-# table_scrappy_mk2("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1")   
+#print(table_scrappy_mk2("https://www.lawmaking.go.kr/opnPtcp/nsmLmSts/out?pageIndex=1"))

@@ -32,9 +32,12 @@ def post():
     try:
         input = request.args.get('url')
         temp = url_search(input)
-        table_result = table_scrappy(temp)
+        #table_result = table_scrappy(temp)
         str_result = str_scrappy(temp)
-        return render_template("index.html", tableBy=table_result, strBy=str_result)
+
+        result_2 = table_scrappy_mk2(input)
+
+        return render_template("index.html", tableBy=result_2, strBy=str_result)
       
     except:
         return redirect("/") # If block the crawl, redirect to index page
