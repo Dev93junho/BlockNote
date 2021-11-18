@@ -15,4 +15,4 @@ def cos_sim(v1, v2):
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 tfidf_vectorize = TfidfVectorizer()
-tfidf = tfidf_vectorize.fit_transform(corpus).toarray()
+tfidf = tfidf_vectorize.fit_transform(corpus).toarray() # corpus is korean dataset. It will be install later
