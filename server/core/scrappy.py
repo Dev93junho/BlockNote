@@ -74,7 +74,6 @@ def table_scrappy_mk2(input):
 
     for i in df:
         row = len(i)
-        col = len(i.columns)
 
         # result.append({'row':row,'col':col,'text':[[i[x][n] for x in i] for n in range(row)]})
         result.append([{x:'' if pd.isna(i[x][n]) else str(i[x][n]) for x in i} for n in range(row)])
