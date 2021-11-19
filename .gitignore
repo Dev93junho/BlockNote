@@ -220,3 +220,4 @@ test/
 # End of https://www.toptal.com/developers/gitignore/api/react,python,jupyternotebooks
 node_modules
 
+*.code-workspace
