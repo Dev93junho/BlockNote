@@ -27,7 +27,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-venv/
 # build/
 develop-eggs/
 dist/
@@ -197,9 +196,6 @@ bower_components
 
 *.sublime*
 
-package.json
-package-lock.json
-
 psd
 thumb
 sketch
@@ -220,4 +216,3 @@ test/
 # End of https://www.toptal.com/developers/gitignore/api/react,python,jupyternotebooks
 node_modules
 
-*.code-workspace
