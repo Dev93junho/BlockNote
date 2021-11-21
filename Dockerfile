@@ -1,16 +1,16 @@
 FROM python:3
 
 # set the directory
-WORKDIR /server
+WORKDIR /app
 
 # copy all files
-COPY . /server
+COPY . /app
 
 # dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# host
-EXPOSE 5000
+#Entry point
+ENTRYPOINT [ "flask" ]
 
 # run command
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["run", "--host","0.0.0.0"]
