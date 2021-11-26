@@ -1,4 +1,4 @@
-# BRICKDocs
+# BRICKdocs
 ## execute
 <pre>
 <code>
