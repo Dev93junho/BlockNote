@@ -1,5 +1,7 @@
 # BRICKdocs
-Flask note application with Auto Scarpper  
+
+<b>Flask note application with Auto Scarpper  </b>
+
 ## Execute
 <pre>
 <code>
