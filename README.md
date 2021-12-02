@@ -1,8 +1,9 @@
 # BRICKdocs
 
-<b>Flask note application with Auto Scarpper  </b>
+## Notice
+- Flask note application with Auto Scarpper
 
-preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
+- preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
 
 ## Execute
 <pre>
