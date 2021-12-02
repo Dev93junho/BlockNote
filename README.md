@@ -1,8 +1,5 @@
 # BRICKdocs
-## Back-End Architecture
-## BrickScrapy
-## BrickSort
-## NCI
+Flask note application with Auto Scarpper  
 ## Execute
 <pre>
 <code>
