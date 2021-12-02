@@ -2,7 +2,7 @@
 
 <b>Flask note application with Auto Scarpper  </b>
 
-preparing beta service with (Team BRICKdocs)[https://github.com/BRICKdocs], since Nov.2021
+preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
 
 ## Execute
 <pre>
