@@ -1,9 +1,17 @@
 # BRICKdocs
 
 ## Notice
-- Flask note application with Auto Scarpper
-
 - preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
+
+## Description
+- Flask Words Editor application with Auto Scarpper
+<pre>
+<code>
+Front-End = React 
+Back-End = Flask
+Core Scrapper = Python
+</code>
+</pre>
 
 ## Execute
 <pre>
