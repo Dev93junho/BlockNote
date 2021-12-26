@@ -1,4 +1,4 @@
-# BRICKdocs
+# BrickEditor
 
 ## Notice
 - preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
