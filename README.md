@@ -1,13 +1,15 @@
 # BrickEditor
 
-## Notice
-- preparing beta service with [Team BRICKdocs](https://github.com/BRICKdocs), since Nov.2021
+## Notice Update!
+- Merge React Front-End
+- Build to Enter Page
+- Build Personal page
+- Deploy using Firebase
 
 ## Description
 - Flask Words Editor application with Auto Scarpper
 <pre>
-<code>
-Front-End = React 
+<code> 
 Back-End = Flask
 Core Scrapper = Python
 </code>
@@ -17,14 +19,3 @@ Core Scrapper = Python
 
 
 ![image](https://user-images.githubusercontent.com/40736396/147408472-680a533d-19fc-45f0-8d8b-a0e738f2e5ab.png)
-
-
-
-## Execute
-- deploy with docker
-<pre>
-<code>
-docker run --name brickdocs -p 8888:5000 brickdocs
-http://localhost:8888/
-</code>
-</pre>
