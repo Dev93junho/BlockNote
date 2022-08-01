@@ -1,4 +1,4 @@
-# BrickEditor
+# Editor
 
 ## Notice Update!
 - Merge React Front-End
@@ -7,7 +7,7 @@
 - Deploy using Firebase
 
 ## Description
-- Flask Words Editor application with Auto Scarpper
+- Flask application with Auto Scarpper
 <pre>
 <code> 
 Back-End = Flask
